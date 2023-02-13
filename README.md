@@ -102,6 +102,7 @@ DELETE FROM candidates
 WHERE Candidate_ID NOT IN (
 SELECT MIN(Candidate_ID) FROM old_candidates
 GROUP BY Email
+);
 ````
 
 
