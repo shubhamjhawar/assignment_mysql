@@ -1,4 +1,3 @@
-```sql
 
 CREATE TABLE employees (
   EmpID INT PRIMARY KEY,
@@ -19,4 +18,4 @@ SELECT Department,
        SUM(Gender = 'Male') AS "Num of Male"
 FROM employees
 GROUP BY Department;
-```
+
