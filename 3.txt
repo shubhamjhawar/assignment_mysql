@@ -1,0 +1,11 @@
+Create table test_results( Candidate_ID int ,Marks Int);
+
+INSERT INTO test_results (Candidate_ID, Marks)
+VALUES
+  (1, 98),
+  (2, 78),
+  (3, 87),
+  (4, 98),
+  (5, 78);
+
+select Marks,ROW_NUMBER() OVER (ORDER BY marks DESC),GROUP_CONCAT(Candidate_ID) from test_results group by marks ;
