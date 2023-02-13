@@ -1,9 +1,12 @@
+
+
 CREATE TABLE employee_salaries (
   Name VARCHAR(50),
   Jan INT,
   Feb INT,
   Mar INT
 );
+
 
 INSERT INTO employee_salaries (Name, Jan, Feb, Mar)
 VALUES
