@@ -1,0 +1,23 @@
+
+CREATE TABLE candidates (
+  Candidate_ID INT PRIMARY KEY,
+  Email VARCHAR(50)
+);
+
+INSERT INTO candidates (Candidate_ID, Email)
+VALUES
+  (45, 'abc@gmail.com'),
+  (23, 'def@yahoo.com'),
+  (34, 'abc@gmail.com'),
+  (21, 'bcf@gmail.com'),
+  (94, 'def@yahoo.com');
+  
+  
+WITH old_candidates AS (
+SELECT * FROM candidates
+)
+DELETE FROM candidates
+WHERE Candidate_ID NOT IN (
+SELECT MIN(Candidate_ID) FROM old_candidates
+GROUP BY Email
+);
