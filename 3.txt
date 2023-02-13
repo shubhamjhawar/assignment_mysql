@@ -8,4 +8,4 @@ VALUES
   (4, 98),
   (5, 78);
 
-select Marks,ROW_NUMBER() OVER (ORDER BY marks DESC),GROUP_CONCAT(Candidate_ID) from test_results group by marks ;
+select Marks,ROW_NUMBER() OVER (ORDER BY marks DESC) as ranking,GROUP_CONCAT(Candidate_ID) from test_results group by marks ;
