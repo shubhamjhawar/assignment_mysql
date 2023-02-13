@@ -66,7 +66,7 @@ select d1.Name,d1.Salary,d1.Month from data as d1 where d1.Salary = (Select max(
 ## 3
 Given the marks obtained by candidates in a test, rank them in proper order.
 
-````
+````mysql
 Create table test_results( Candidate_ID int ,Marks Int);
 
 INSERT INTO test_results (Candidate_ID, Marks)
