@@ -86,8 +86,22 @@ select Marks,ROW_NUMBER() OVER (ORDER BY marks DESC) as Ranking,GROUP_CONCAT(Can
 4. If same value is repeated for different id, then keep the value that has smallest id and delete
 all the other rows having same value:
 
-````
+````mysql
 
+INSERT INTO candidates (Candidate_ID, Email)
+VALUES
+  (45, 'abc@gmail.com'),
+  (23, 'def@yahoo.com'),
+  (34, 'abc@gmail.com'),
+  (21, 'bcf@gmail.com'),
+  (94, 'def@yahoo.com');
+WITH old_candidates AS (
+SELECT * FROM candidates
+)
+DELETE FROM candidates
+WHERE Candidate_ID NOT IN (
+SELECT MIN(Candidate_ID) FROM old_candidates
+GROUP BY Email
 ````
 
 
