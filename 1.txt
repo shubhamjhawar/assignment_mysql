@@ -1,0 +1,22 @@
+```sql
+
+CREATE TABLE employees (
+  EmpID INT PRIMARY KEY,
+  Name VARCHAR(10),
+  Gender VARCHAR(10),
+  Department VARCHAR(25)
+);
+
+INSERT INTO employees (EmpID, Name, Gender, Department)
+VALUES
+  (1, 'X', 'Female', 'Finance'),
+  (2, 'Y', 'Male', 'IT'),
+  (3, 'Z', 'Male', 'HR'),
+  (4, 'W', 'Female', 'IT');
+
+SELECT Department,
+       SUM(Gender = 'Female') AS "Num of Female",
+       SUM(Gender = 'Male') AS "Num of Male"
+FROM employees
+GROUP BY Department;
+```
