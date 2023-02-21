@@ -60,7 +60,7 @@ WITH data AS (
   SELECT Name, 'Mar' AS Month, Mar AS Salary FROM employee_salaries
 )
 
-select d1.Name,d1.Salary,d1.Month from data as d1 where d1.Salary = (Select max(salary) from data as d2 where d1.name = d2.name group by d2.Name) order by d1.Name;
+SELECT d1.Name,d1.Salary,d1.Month FROM data AS d1 WHERE d1.Salary = (SELECT max(salary) FROM data AS d2 WHERE d1.name = d2.name GROUP BY d2.Name) ORDER BY d1.Name;
 ```
 
 ## 3
@@ -77,7 +77,7 @@ VALUES
   (4, 98),
   (5, 78);
 
-select Marks,ROW_NUMBER() OVER (ORDER BY marks DESC) as Ranking,GROUP_CONCAT(Candidate_ID) from test_results group by marks ;
+SELECT Marks,ROW_NUMBER() OVER (ORDER BY marks DESC) AS Ranking,GROUP_CONCAT(Candidate_ID) FROM test_results GROUP BY marks ;
 
 ````
 
